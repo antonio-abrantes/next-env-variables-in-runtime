@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+  publicRuntimeConfig: {
+    SECRET_KEY: process.env.NEXT_PUBLIC_SECRET_KEY,
+  },
+  compiler: {
+    styledComponents: {
+      ssr: true,
+      displayName: true,
+    },
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
